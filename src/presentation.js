@@ -20,18 +20,20 @@ import createTheme from 'spectacle/lib/themes/default';
 // Require CSS
 require('normalize.css');
 
-const theme = createTheme(
+const oneLight = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quartenary: '#CECECE',
+    primary: 'hsl(230, 1%, 98%)',
+    secondary: 'hsl(230, 8%, 24%)',
+    tertiary: 'hsl(198, 99%, 37%)',
+    quartenary: 'hsl(5, 74%, 59%)',
   },
   {
-    primary: 'Montserrat',
+    primary: 'Fira Code',
     secondary: 'Helvetica',
   }
 );
+
+const theme = oneLight;
 
 export default class Presentation extends React.Component {
   render() {
@@ -41,7 +43,25 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide transition={['zoom']} bgColor="primary">
+				<Slide>
+					<Heading>outline</Heading>
+					<Heading size={4}>preamble</Heading>
+					<List>
+						<ListItem>team structure</ListItem>
+					</List>
+					<Heading size={4}>sharing web/mobile</Heading>
+					<List>
+						<ListItem>rollup</ListItem>
+						<ListItem>window/global</ListItem>
+						<ListItem>move static config to state</ListItem>
+					</List>
+					<Heading size={4}>composing redux</Heading>
+					<List>
+						<ListItem>thunk adapter</ListItem>
+						<ListItem>move non-business logic to middleware</ListItem>
+					</List>
+				</Slide>
+        <Slide transition={['zoom']} bgColor="primary" progressColor="quartenary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Spectacle Boilerplate
           </Heading>
@@ -72,7 +92,7 @@ export default class Presentation extends React.Component {
             Standard text
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
+        <Slide transition={['fade']} bgColor="primary" textColor="tertiary" progressColor="quartenary">
           <Heading size={6} textColor="secondary" caps>
             Standard List
           </Heading>
