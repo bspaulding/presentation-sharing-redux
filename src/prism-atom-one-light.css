@@ -1,0 +1,169 @@
+:root {
+	/* colors */
+	/* Config ----------------------------------- */
+	--syntax-hue:          230;
+	--syntax-saturation:    1%;
+	--syntax-brightness:   98%;
+
+	/* Monochrome ----------------------------------- */
+	--mono-1: hsl(var(--syntax-hue), 8%, 24%);
+	--mono-2: hsl(var(--syntax-hue), 6%, 44%);
+	--mono-3: hsl(var(--syntax-hue), 4%, 64%);
+
+	/* Colors ----------------------------------- */
+	--hue-1:   hsl(198, 99%, 37%); /* <-cyan */
+	--hue-2:   hsl(221, 87%, 60%); /* <-blue */
+	--hue-3:   hsl(301, 63%, 40%); /* <-purple */
+	--hue-4:   hsl(119, 34%, 47%); /* <-green */
+
+	--hue-5:   hsl(  5, 74%, 59%); /* <-red 1 */
+	--hue-5-2: hsl(344, 84%, 43%); /* <-red 2 */
+
+	--hue-6:   hsl(41, 99%, 30%); /* <-orange 1 */
+	--hue-6-2: hsl(41, 99%, 38%); /* <-orange 2 */
+
+
+	/* Base colors ----------------------------------- */
+	--syntax-fg:     var(--mono-1);
+	--syntax-bg:     hsl(var(--syntax-hue), var(--syntax-saturation), var(--syntax-brightness));
+	--syntax-gutter: darken(var(--syntax-bg), 36%);
+	--syntax-guide:  fade(var(--syntax-fg), 20%);
+	--syntax-accent: hsl(var(--syntax-hue), 100%, 66% );
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: var(--syntax-fg); /* base00 */
+	font-family: Fira Code, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: var(--syntax-bg); /* base02 */
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: var(--syntax-bg); /* base02 */
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: var(--syntax-bg); /* base3 */
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--mono-3); /* base1 */
+	font-style: italic;
+}
+
+.token.punctuation {
+	color: var(--mono-1); /* base01 */
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.symbol,
+.token.deleted {
+	color: var(--hue-1);
+}
+.token.constant {
+	color: var(--hue-6);
+}
+.token.number {
+	color: var(--hue-6);
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+	color: var(--hue-3);
+}
+.token.string {
+	color: var(--hue-4);
+}
+
+.token.entity {
+	color: var(--hue-6-2); /* base00 */
+	background: var(--syntax-bg); /* base2 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--hue-3);
+}
+
+.token.function {
+	color: var(--hue-1);
+}
+.token.class-name {
+	color: var(--hue-6-2);
+}
+
+.token.regex,
+.token.important {
+	color: var(--hue-1);
+}
+
+.token.variable,
+.token.function-variable {
+	color: var(--hue-6-2);
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.operator {
+	color: var(--hue-1);
+}
