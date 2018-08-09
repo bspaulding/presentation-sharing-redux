@@ -13,6 +13,11 @@ import {
   Slide,
   Text,
 } from 'spectacle';
+// import 'prism-themes/themes/prism-ghcolors.css';
+// import 'prismjs/themes/prism-solarizedlight.css';
+import './prism-atom-one-light.css';
+import './presentation.css';
+import Prism from 'prismjs';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -34,6 +39,13 @@ const oneLight = createTheme(
 );
 
 const theme = oneLight;
+
+const CodePane = ({ language = "javascript", source }) =>
+	<pre className={`language-${language}`}>
+		<code className={`language-${language}`} style={{fontFamily: "Fira Code" }} dangerouslySetInnerHTML=
+			{{ __html: Prism.highlight(source, Prism.languages[language], language)}}
+		/>
+	</pre>
 
 export default class Presentation extends React.Component {
   render() {
@@ -60,6 +72,19 @@ export default class Presentation extends React.Component {
 						<ListItem>thunk adapter</ListItem>
 						<ListItem>move non-business logic to middleware</ListItem>
 					</List>
+				</Slide>
+				<Slide>
+					<CodePane source={`
+// hello comment
+const foo = () => 'bar';
+var x = 2;
+class Foo {
+  getFoo() {
+    return this.foo;
+  }
+}
+delete foo.bar
+`}	/>
 				</Slide>
         <Slide transition={['zoom']} bgColor="primary" progressColor="quartenary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
