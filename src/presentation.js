@@ -1,3 +1,5 @@
+/* eslint-disable import/no-webpack-loader-syntax */
+
 // Import React
 import React from 'react';
 
