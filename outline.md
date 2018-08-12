@@ -1,0 +1,21 @@
+# Universal React Applications with Redux
+
+- intro to me
+- why this talk?
+  - florence tweet
+- what we are doing
+	- team org
+	- sharing views not practical, sharing redux makes sense
+- things that were hard
+  - extracting web code
+		- using rollup to create separate mobile bundle
+			- why not just copy source?
+				- gives us a chance to catch somethings in the bundle step
+					- example: if someone tries to return React.Element or an image in a selector...
+		- web vs. JSC/RN env
+			- no browser / DOM, no window
+			- static config becomes dispatch-init-on-mount
+	- sharing thunks w/ different state
+		- thunk adapter
+		- use middleware for non-business logic
+	- teaching / learning js/react/redux

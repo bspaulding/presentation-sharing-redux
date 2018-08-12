@@ -56,35 +56,7 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
 				<Slide>
-					<Heading>outline</Heading>
-					<Heading size={4}>preamble</Heading>
-					<List>
-						<ListItem>team structure</ListItem>
-					</List>
-					<Heading size={4}>sharing web/mobile</Heading>
-					<List>
-						<ListItem>rollup</ListItem>
-						<ListItem>window/global</ListItem>
-						<ListItem>move static config to state</ListItem>
-					</List>
-					<Heading size={4}>composing redux</Heading>
-					<List>
-						<ListItem>thunk adapter</ListItem>
-						<ListItem>move non-business logic to middleware</ListItem>
-					</List>
-				</Slide>
-				<Slide>
-					<CodePane source={`
-// hello comment
-const foo = () => 'bar';
-var x = 2;
-class Foo {
-  getFoo() {
-    return this.foo;
-  }
-}
-delete foo.bar
-`}	/>
+					<CodePane source={require('raw-loader!./code/code-test.example')} />
 				</Slide>
         <Slide transition={['zoom']} bgColor="primary" progressColor="quartenary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
