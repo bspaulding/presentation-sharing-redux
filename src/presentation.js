@@ -56,7 +56,7 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
 				<Slide>
-					<CodePane source={require('raw-loader!./code/code-test.example')} />
+					<CodePane source={require('raw-loader!./code-test.example')} />
 				</Slide>
         <Slide transition={['zoom']} bgColor="primary" progressColor="quartenary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
