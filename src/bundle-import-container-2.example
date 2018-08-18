@@ -1,0 +1,12 @@
+// containers/SomeContainer.js
+import {
+	actions,
+	selectors
+} from '@org/webapp-a';
+
+// ...
+const {
+	getWidgets,
+	getSelectedWidget
+} = selectors.WidgetSelectors;
+

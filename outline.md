@@ -3,6 +3,9 @@
 - intro to me
 - why this talk?
   - florence tweet
+- why do this?
+	- large web teams, already using redux
+	- small mobile team in support
 - what we are doing
 	- team org
 	- sharing views not practical, sharing redux makes sense

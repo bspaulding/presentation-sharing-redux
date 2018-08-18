@@ -15,17 +15,19 @@ import {
   Slide,
   Text,
 } from 'spectacle';
+import createTheme from 'spectacle/lib/themes/default';
 // import 'prism-themes/themes/prism-ghcolors.css';
 // import 'prismjs/themes/prism-solarizedlight.css';
 import './prism-atom-one-light.css';
+import 'normalize.css';
 import './presentation.css';
 import Prism from 'prismjs';
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
-// Import theme
-import createTheme from 'spectacle/lib/themes/default';
-
-// Require CSS
-require('normalize.css');
+Prism.plugins.NormalizeWhitespace.setDefaults({
+	indent: 1,
+	'tabs-to-spaces': 2
+});
 
 const oneLight = createTheme(
   {
@@ -53,12 +55,33 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['zoom', 'slide']}
-        transitionDuration={500}
+        transition={['fade']}
+        transitionDuration={300}
         theme={theme}
       >
 				<Slide>
-					<CodePane source={require('raw-loader!./code-test.example')} />
+					<CodePane source={require('./code-test.example')} />
+				</Slide>
+				<Slide>
+					<img style={{ width: '100%' }} src={require('./images/Team Org.png')}/>
+				</Slide>
+				<Slide>
+					<img style={{ width: '100%' }} src={require('./images/Team Org 2.png')}/>
+				</Slide>
+				<Slide>
+					<img style={{ width: '100%' }} src={require('./images/Bundling.png')}/>
+				</Slide>
+				<Slide>
+					<CodePane source={require('./bundle-import-reducers.example')} />
+				</Slide>
+				<Slide>
+					<CodePane source={require('./bundle-import-container.example')} />
+				</Slide>
+				<Slide>
+					<CodePane source={require('./bundle-import-container-2.example')} />
+				</Slide>
+				<Slide>
+					<CodePane source={require('./bundle-import-container-3.example')} />
 				</Slide>
         <Slide transition={['zoom']} bgColor="primary" progressColor="quartenary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">

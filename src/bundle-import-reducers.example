@@ -1,0 +1,12 @@
+// reducers/index.js
+import {
+	reducers as AReducers
+} from '@org/webapp-a';
+import {
+	reducers as BReducers
+} from '@org/webapp-b';
+
+export default combineReducers({
+	A: AReducers,
+	B: BReducers
+});
