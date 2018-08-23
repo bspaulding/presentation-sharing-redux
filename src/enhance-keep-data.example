@@ -1,0 +1,9 @@
+// in a new EnhancedWidgetsReducer.js
+switch (action.type) {
+  case DATA_LOADED:
+    const old = getWidgets(state);
+    const newState = inputReducer(state, action);
+    return mergeWidgets(newState, old);
+  default:
+    return inputReducer(state, action);
+}

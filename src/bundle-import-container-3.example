@@ -1,12 +1,14 @@
 // containers/SomeContainer.js
 export default connect(
-	createStructuredSelector({
-		widgets: getWidgets,
-		selectedWidget: getSelectedWidget
-	}),
+	createSelector(
+		getAState,
+		createStructuredSelector({
+			widgets: getWidgets,
+			selectedWidget: getSelectedWidget
+		})
+	),
 	{
 		loadWidgets,
 		selectWidget
 	}
 )(WidgetsListComponent);
-

@@ -1,0 +1,14 @@
+// in rollup.config.js
+babel({
+	// ...
+	presets: [
+		"react",
+		["es2015", { modules: false }],
+	],
+	plugins: [
+		"external-helpers",
+		"transform-syntax-async-functions",
+		// ... w/e else you want
+	]
+})
+// ..

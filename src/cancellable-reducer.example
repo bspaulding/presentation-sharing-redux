@@ -1,0 +1,12 @@
+// reducers/index.js
+const cancellable = makeCancellableReducer(
+	inputReducer,
+	"MARK_STATE_ACTION", // <- mark state to restore
+	"CANCEL_ACTION" // <- restore it!
+);
+
+// state looks like:
+type CancellableState<YourState> = {
+	markedState: YourState,
+	state: YourState // <- select this
+};

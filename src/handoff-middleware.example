@@ -1,0 +1,8 @@
+const { Handoff } = NativeModules;
+
+const handoffMiddleware = store => {
+	Handoff.onHandoffReceived(event => {
+		store.dispatch(restoreFromHandoff(event));
+	});
+	// next slide...
+};
