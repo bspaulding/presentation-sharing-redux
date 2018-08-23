@@ -1,9 +1,0 @@
-// SomeComponent.js
-componentDidMount() {
-  this.props.init(staticConfig);
-}
-
-// SomeActions.js
-const widgets = await getWidgets({
-  environment: getEnvironment(getState())
-})
